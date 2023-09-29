@@ -1,0 +1,34 @@
+#include<stdio.h>
+void insertion(int a[],int n,int key)
+{
+	int i,j,t;
+	for(i=1;i<n;i++)
+	{
+		key=a[i];
+		
+		for(j=i-1;j>=0;j--)
+		if(key<a[j])
+		{
+		t=a[j+1];
+		a[j+1]=a[j];
+		a[j]=t;
+		}
+	}
+}
+int main()
+{
+	int a[100],i,n,key;
+	printf("Enter limit:");
+	scanf("%d",&n);
+	printf("ENter n numbers:");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	insertion(a,n,key);
+	printf("sorted array:");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+}
