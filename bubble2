@@ -1,0 +1,34 @@
+#include<stdio.h>
+void bubble(int a[100],int n)
+{
+	int t,pass,i;
+	for(pass=1;pass<n-1;pass++)
+	{
+		for(i=0;i<n-pass;i++)
+		{
+			if(a[i]>a[i+1])
+			{
+				t=a[i];
+				a[i]=a[i+1];
+				a[i+1]=t;
+			}
+		}
+	}
+	printf("Sorted array:");
+	for(i=0;i<n;i++)
+	{
+		printf("%d\t",a[i]);
+	}
+}
+int main()
+{
+	int a[100],i,n;
+	printf("ENter limit:");
+	scanf("%d",&n);
+	printf("Enter n numbers:");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	bubble(a,n);
+}
